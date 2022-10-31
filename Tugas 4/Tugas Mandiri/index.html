@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .box{
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        fieldset{
+            width: 40vh;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <fieldset>
+        <legend>Tugas 4 Mandiri</legend>
+        <p id="sebelum"></p>
+        <p id="upper"></p>
+        <p id="lower"></p>
+        <p id="ubahkata"></p>
+        <p id="panjang"></p>
+    </fieldset>
+    </div>
+</body>
+
+<script>
+    let sebelum = document.getElementById("sebelum")
+    let upper = document.getElementById("upper")
+    let lower = document.getElementById("lower")
+    let ubahkata = document.getElementById("ubahkata")
+    let panjang = document.getElementById("panjang")
+    
+    //Menampilkan teks Merah Putih
+    let teks = "Merah Putih"
+    sebelum.innerText = "Sebelum diubah : "+ teks
+
+    //Menampilkan teks Uppercase
+    let uppercase = teks.toUpperCase()
+    upper.innerText = "Diubah menjadi Uppercase : " + uppercase
+
+    //Menampilkan teks Lowercase
+    let lowercase = teks.toLowerCase()
+    lower.innerText = "Diubah menjadi Lowercase : " + lowercase
+
+    //Mengubah kata "Putih" menjadi "Muda"
+    let replace = teks.replace("Putih", "Muda")
+    ubahkata.innerText = "Mengubah kata menjadi : " + replace
+
+    //Menampilkan panjang string
+    let length = replace.length;
+    panjang.innerText = "Panjang stringnya adalah : " + length
+
+</script>
+
+</html>
