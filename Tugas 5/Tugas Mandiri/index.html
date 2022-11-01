@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 5 Mandiri</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let input = prompt("Masukkan angka")
+    let nilai = parseInt(input)
+
+    let hasil = "Angka Ganjil"
+
+    //Jika angka yang dimasukkan genap maka hasilnya genap
+    if (nilai%2 == 0){
+        hasil = "Angka Genap"
+    }
+
+    //Selain itu, jika inputan string maka tidak ada hasil 
+    else if(isNaN(nilai)){
+        hasil = "Salah, Harus memasukkan angka"
+    }
+
+    //Selain itu maka hasilnya ganjil
+    else(
+        hasil = hasil
+    )
+
+    alert(hasil)
+</script>
+</html>
