@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 6 Mandiri</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .container {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            box-shadow: rgba(19, 19, 247, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            width: 45vh;
+            border-radius: 20px;
+        }
+        .opsi {
+            margin: 15px 0px;
+        }
+
+        input {
+            border-radius: 10px;
+            padding: 5px;
+            border-color: antiquewhite;
+        }
+
+        select {
+            padding: 3px 5px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 3px 7px;
+            border-radius: 10px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Kalkulator Sederhana</h2>
+            <form id="frm">
+                <h3>Hasil : <span id="hasil"></span></h3>
+                <input type="number" id="angka1" placeholder="Angka Pertama" >
+                <input type="number" id="angka2" placeholder="Angka Kedua" >
+                <div class="opsi">
+                    <select name="option" id="option">
+                        <option value="penjumlahan">Penjumlahan</option>
+                        <option value="pengurangan">Pengurangan</option>
+                        <option value="perkalian">Perkalian</option>
+                        <option value="pembagian">Pembagian</option>
+                        <option value="pangkat">Pangkat</option>
+                        <option value="modulus">Modulus</option>   
+                    </select>
+                    <input type="button" id="button" onclick="operation()" value="Start">
+                    <input type="button" id="button" onclick="reset()" value="Reset">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
