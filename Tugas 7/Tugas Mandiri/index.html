@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 7 Mandiri</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .box{
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        fieldset{
+            width: 25vh;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <fieldset>
+            <legend><h2>Tugas 7 Mandiri</h2></legend>
+            <h3 id="hasil"></h3>
+        </fieldset>
+    </div>
+</body>
+<script>
+    let hewan = [
+        "Gajah",
+        "Ikan",
+        "Harimau"
+    ]
+
+    // Menambahkan hewan gagak
+    const tambah = () => {
+        hewan.push("Gagak")
+    }
+
+    //Mengubah index ke 2 menjadi Kucing
+    const ubah = () => {
+        hewan.splice(2,0, "Kucing")
+    }
+
+    //Menghapus index 0
+    const hapus = () => {
+        hewan.shift()
+    }
+
+    tambah()
+    ubah()
+    hapus()
+
+    document.getElementById("hasil").innerHTML = hewan
+</script>
+</html>
