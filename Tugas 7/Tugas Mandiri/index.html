@@ -16,9 +16,32 @@
             align-items: center;
         }
         fieldset{
-            width: 25vh;
+            width: 35vh;
             box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
             border-radius: 20px;
+        }
+
+        .menu{
+            background-color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            margin: 5px 0px;
+            border-radius: 20px;
+            width: 35vh;
+        }
+        
+        .opsi {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button{
+            border-radius: 10px;
+        }
+
+        label{
+            margin: 10px 0px;
         }
     </style>
 </head>
@@ -27,10 +50,26 @@
         <fieldset>
             <legend><h2>Tugas 7 Mandiri</h2></legend>
             <h3 id="hasil"></h3>
+            <small>*Refresh halaman jika ingin reset</small>
+            <div class="opsi">
+                <div class="menu">
+                    <label>Menambahkan hewan Gagak</label>
+                    <button type="submit" id="tambah" onclick="tambah()">Start</button>
+                </div>
+                <div class="menu">
+                    <label>Mengubah index 2 menjadi kucing</label>
+                    <button type="submit" id="tambah" onclick="ubah()">Start</button>
+                </div>
+                <div class="menu">
+                    <label>Menghapus index 0</label>
+                    <button type="submit" id="tambah" onclick="hapus()">Start</button>
+                </div>
+            </div>
         </fieldset>
     </div>
 </body>
 <script>
+    let add = document.getElementById("tambah")
     let hewan = [
         "Gajah",
         "Ikan",
@@ -40,22 +79,25 @@
     // Menambahkan hewan gagak
     const tambah = () => {
         hewan.push("Gagak")
+        document.getElementById("hasil").innerText = hewan
+        
     }
 
     //Mengubah index ke 2 menjadi Kucing
     const ubah = () => {
-        hewan.splice(2,0, "Kucing")
+        hewan.splice(2,1, "Kucing")
+        document.getElementById("hasil").innerText = hewan
+
     }
 
     //Menghapus index 0
     const hapus = () => {
         hewan.shift()
+        document.getElementById("hasil").innerText = hewan
+
     }
 
-    tambah()
-    ubah()
-    hapus()
+    document.getElementById("hasil").innerText = hewan
 
-    document.getElementById("hasil").innerHTML = hewan
 </script>
 </html>
