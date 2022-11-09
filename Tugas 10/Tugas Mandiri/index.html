@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Mandiri 10</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body{
+            font-family: "Poppins"
+        }
+        h2{
+            text-align: center;
+            margin-top: 50px;
+        }
+        select{
+            padding: 3px;
+            border-radius: 10px;
+        }
+        #inputan {
+            padding: 5px;
+            margin: 10px 0px 10px 0px;
+            border:  1px solid;
+            border-radius: 10px;
+        }
+        #inputSuhu {
+            padding: 5px;
+            margin: 10px 0px 10px 0px;
+            border:  1px solid;
+            border-radius: 10px;
+        }
+        #button{
+            background-color: rgb(139, 197, 247);
+            color: white;
+            border: none;
+            width: 7vh;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        #button:hover{
+            background-color: rgb(65, 65, 255);
+            color: white;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .left-container{
+            padding: 15px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 20px;
+        }
+        .right-container{
+            padding: 15px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 20px;
+        }
+        span{
+            color: #2da6ec;
+        }
+        p{
+            margin-top: 20vh;
+            text-align: center;
+            font-size: small;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Konversi Mata Uang</h2>
+    <div class="container">
+        <div class="left-container">
+            <h3>Mata Uang Asal</h3>
+            <select name="" id="pilih">
+                <option value="pound">Inggris - Poundsterling</option>
+                <option value="rupiah">Indonesia - Rupiah</option>
+                <option value="dollar">Amerika - Dolar</option>
+            </select>
+            <input type="number" id="inputan" placeholder="Masukkan Nilai">
+            <input type="button" id="button" value="Submit" onclick="prosesUang()">
+        </div>
+        <div class="right-container">
+            <h3>Mata Uang Tujuan</h3>
+            <select name="" id="pilih2">
+                <option value="pound">Inggris - Poundsterling</option>
+                <option value="rupiah">Indonesia - Rupiah</option>
+                <option value="dollar">Amerika - Dolar</option>
+            </select>
+            <h4>Hasil : <span id="hasil"></span></h4>
+        </div>
+    </div>
+
+
+    <!-- SUhu -->
+    <h2>Konversi Suhu</h2>
+    <div class="container">
+        <div class="left-container">
+            <h3 id="suhu">Nilai Suhu Awal</h3>
+            <select name="" id="change">
+                <option value="celcius">Celcius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+            <input type="number" id="inputSuhu" placeholder="Masukkan Nilai">
+            <input type="button" id="button" value="Submit" onclick="prosesSuhu()">
+        </div>
+        <div class="right-container">
+            <h3>Nilai Suhu Tujuan</h3>
+            <select name="" id="change2">
+                <option value="celcius">Celcius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+            </select>
+            <h4>Hasil : <span id="hasilSuhu"></span></h4>
+        </div>
+    </div>
+    <p><sup>*</sup>refresh halaman jka ingin mereset form <br> &copy; Faiz Haidar - 2022</p>
+</body>
+<script>
+    //Function Mata Uang
+    const prosesUang = () => {
+        let select1 = document.getElementById("pilih").value
+        let select2 = document.getElementById("pilih2").value
+        let nilai = document.getElementById("inputan").value
+        let hasil = document.getElementById("hasil")
+
+        if (select1 == "rupiah" && select2 == "rupiah" || select1 == "pound" && select2 == "pound" || select1 == "dollar" && select2 == "dollar"){
+            hasil.innerHTML = nilai
+        }
+        else if (select1 == "rupiah" && select2 == "dollar") {
+            hasil.innerHTML = "$ " + nilai * 0.000064
+        }
+        else if (select1 == "rupiah" && select2 == "pound") {
+            hasil.innerHTML = "£ " + nilai * 0.000055
+        }
+        else if (select1 == "pound" && select2 == "rupiah") {
+            hasil.innerHTML = "Rp " + nilai * 18024.18
+        }
+        else if (select1 == "pound" && select2 == "dollar") {
+            hasil.innerHTML = "$ " + nilai * 1.15
+        }
+        else if (select1 == "dollar" && select2 == "rupiah") {
+            hasil.innerHTML = "Rp " + nilai * 15650.00
+        }
+        else if (select1 == "dollar" && select2 == "pound") {
+            hasil.innerHTML = "£ " + nilai * 0.87
+        }
+    }
+
+
+    //Function Suhu
+    const prosesSuhu = () => {
+        let pilih = document.getElementById("change").value
+        let pilih2 = document.getElementById("change2").value
+        let nilai1 = document.getElementById("inputSuhu").value
+        let hasil1 = document.getElementById("hasilSuhu")
+
+        if (pilih == "celcius" && pilih2 == "celcius" || pilih == "fahrenheit" && pilih2 == "fahrenheit" || pilih == "kelvin" && pilih2 == "kelvin") {
+            hasil1.innerHTML = nilai1
+        }
+        else if(pilih == "celcius" && pilih2 == "fahrenheit"){
+            hasil1.innerHTML = (nilai1 * 9 / 5) + 32 + "°F"
+        }
+        else if(pilih == "celcius" && pilih2 == "kelvin"){
+            hasil1.innerHTML = nilai1 + 273.15 + "K"
+        }
+        else if(pilih == "fahrenheit" && pilih2 == "celcius"){
+            hasil1.innerHTML = (nilai1 - 32) * 5 / 9 + "°C"
+        }
+        else if(pilih == "fahrenheit" && pilih2 == "kelvin"){
+            hasil1.innerHTML = (nilai1 - 32) * 5 / 9 + 273.15 + "K"
+        }
+        else if(pilih == "kelvin" && pilih2 == "celcius"){
+            hasil1.innerHTML = nilai1 - 273.15 + "°C"
+        }
+        else if(pilih == "kelvin" && pilih2 == "fahrenheit"){
+            hasil1.innerHTML = (masukan - 273.15) * 9 / 5 + 32 + "°F"
+        }
+    }
+</script>
+</html>
