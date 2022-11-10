@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 11 Mandiri</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body{
+            font-family: "Poppins";
+        }
+        #nama{
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+
+        }
+        .box1{
+            text-align: center;
+            margin: 10px ;
+            padding: 10px;
+        }
+        #inputan{
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 20px;
+        }
+        .box2{
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+        }
+        #btn-mouse{
+            padding: 10px;
+            border-radius: 20px;
+            border: 0px solid;
+            background-color: rgb(162, 162, 255);
+            color: white;
+        }
+        #btn-mouse:hover{
+            background-color: rgb(107, 107, 255);
+        }
+
+        .tenor-gif-embed{
+            margin-top: 30px;
+        }
+
+        .box3{
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+        }
+        #pilih{
+            padding: 5px;
+            border-radius: 20px;
+        }   
+
+    </style>
+</head>
+<body>
+    <p id="nama"><small>By Faiz Haidar</small></p>
+    <div class="container">
+        <div class="box1">
+            <h2>Keyboard Event Program</h2>
+            <p>Ketiklah dalam inputan</p>
+            <input type="text" id="inputan" placeholder="Ketik ape aje....">
+            <p id="key"></p>
+        </div>
+        <div class="box2">
+            <h2>Mouse Event Program</h2>
+            <p>Arahkan kursor ke tombol dibawah ini</p>
+            <button type="submit" id="btn-mouse">Mouse Event</button>
+        </div>
+        <div class="box3">
+            <h2>Event Change Program</h2>
+            <p>Pilih Warna Background</p>
+            <select name="" id="pilih">
+                <option value="">Pilih Warna Background</option>
+                <option value="kuning">Kuning</option>
+                <option value="aliceblue">Aliceblue</option>
+                <option value="pink">Pink</option>
+            </select>
+            <p id="text"></p>
+        </div>
+    </div>
+    <center><div id="gif" class="tenor-gif-embed" data-postid="19140829" data-share-method="host" data-aspect-ratio="1" data-width="20%"><a href="https://tenor.com/view/woah-kaget-gif-19140829">Woah Kaget GIF</a>from <a href="https://tenor.com/search/woah+kaget-gifs">Woah Kaget GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script></center>
+</body>
+<script>
+    //Mouse Event Program
+    let gif = document.getElementById("gif")
+    let btnMouse = document.getElementById("btn-mouse")
+    btnMouse.addEventListener("mouseenter", () => {
+        gif.style.display = "block"
+    })
+    btnMouse.addEventListener("mouseleave", () => {
+        gif.style.display = "none"
+    })
+
+    //Event Change Program
+    let pilih =document.getElementById("pilih")
+    pilih.addEventListener("change", () => {
+        if(pilih.value == ""){
+            document.body.style.backgroundColor = "white"
+        }
+        else if(pilih.value == "kuning"){
+            document.body.style.backgroundColor = "yellow"
+        }
+        else if(pilih.value == "aliceblue"){
+            document.body.style.backgroundColor = "aliceblue"
+        }
+        else if(pilih.value == "pink"){
+            document.body.style.backgroundColor = "pink"
+        }
+    })
+
+    //Keyboard Event Program
+    let inputan = document.getElementById("inputan")
+    let key = document.getElementById("key")
+    inputan.addEventListener("keypress", () => {
+        key.innerHTML = "<i class='bx bx-donate-heart bx-lg bx-burst' style='color:#f21f1f' ></i>"
+    })
+    
+</script>
+</html>
