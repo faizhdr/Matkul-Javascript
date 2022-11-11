@@ -1,2 +1,2 @@
-Mau copy izin dlu yaa..
+Jujur.........., Mau copy izin dlu yaa..
 
