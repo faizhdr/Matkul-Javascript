@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 13 Mandiri - onLoad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body{
+            font-family: "Poppins";
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box" class="onload">
+        <h2>Event onLoad</h2>
+        <p>
+            Event onload terjadi ketika sebuah objek telah dimuat.
+
+            onload paling sering digunakan dalam elemen body untuk mengeksekusi skrip setelah halaman web memuat semua konten (termasuk gambar, file skrip, file CSS, dll.).
+
+            Event onload dapat digunakan untuk memeriksa jenis browser pengunjung dan versi browser, dan memuat versi halaman web yang tepat berdasarkan informasi.
+        </p>
+    </div>
+    
+</body>
+<script>
+    let box1 = document.getElementById("box")
+    window.onload = () => {
+        alert("Background pada event onload menjadi berwarna")
+
+        document.body.style.cssText = `
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        `
+
+        box1.style.cssText = `
+        background-color: aliceblue;
+        padding: 20px;
+        width: 40vh;
+        border-radius: 20px;
+        `
+
+    }
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 13 Mandiri - onbeforeunload</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body{
+            font-family: "Poppins";
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .box {
+            background-color: antiquewhite;
+            padding: 20px;
+            width: 40vh;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Event onbeforeunload</h2>
+        <p>
+            Event onbeforeunload terjadi ketika dokumen akan dibongkar.
+
+            Event ini memungkinkan Anda untuk menampilkan pesan dalam kotak dialog konfirmasi untuk memberi tahu pengguna apakah dia ingin tetap tinggal atau meninggalkan halaman saat ini.
+
+            Pesan default yang muncul di kotak konfirmasi, berbeda di browser yang berbeda. Namun, pesan standarnya adalah seperti "Apakah Anda yakin ingin meninggalkan halaman ini?". Pesan ini tidak dapat dihapus.
+        </p>
+        <a href="https://www.petikjombang.com/">Website PeTIK Jombang</a>
+    </div>
+</body>
+<script>
+    window.onbeforeunload = (event) => {
+        event.returnValue = "Ketikan sesuatu"
+    }
+</script>
+</html>

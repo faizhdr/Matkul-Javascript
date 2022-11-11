@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 13 Mandiri - onerror</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body{
+            font-family: "Poppins";
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .box {
+            background-color: antiquewhite;
+            padding: 20px;
+            width: 40vh;
+            border-radius: 20px;
+        }
+        #text{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Event onerror</h2>
+        <img src="image.gif" id="gambar">
+        <p id="text"></p>
+        <p>
+            Peristiwa onerror dipicu jika terjadi kesalahan saat memuat file eksternal (misalnya dokumen atau gambar).
+        </p>
+    </div>
+</body>
+<script>
+    document.getElementById("gambar").onerror = () => {main()}
+
+    const main = () => {
+        document.getElementById("text").innerHTML = "Gambar tidak dapat dimuat"
+    }
+</script>
+</html>
