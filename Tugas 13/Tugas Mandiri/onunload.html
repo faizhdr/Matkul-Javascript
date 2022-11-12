@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 13 Mandiri - onunload</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body{
+            font-family: "Poppins";
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .box {
+            background-color: antiquewhite;
+            padding: 20px;
+            width: 40vh;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Event onunload</h2>
+        <p>
+            Event onunload terjadi setelah halaman dibongkar (atau jendela browser telah ditutup).
+
+            onunload terjadi ketika pengguna menavigasi keluar dari halaman (dengan mengklik tautan, mengirimkan formulir, menutup jendela browser, dll.).
+        </p>
+    </div>
+</body>
+<script>
+    window.onunload = () => {
+        alert("Hai")
+    }
+</script>
+</html>
